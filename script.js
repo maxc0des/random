@@ -1,5 +1,6 @@
+//i know my code ain't that goog
 document.getElementById('generate').addEventListener("click", get_fact);
-
+console.log("hello world!")
 function get_fact(){
   fetch("https://en.wikipedia.org/api/rest_v1/page/random/summary")
     .then(response => {
@@ -14,7 +15,7 @@ function get_fact(){
       let title = `${data.title}`;
       let content = `${data.extract}`;
       let more = `Learn more about this @wikipedia.org`;
-      let url = '${data.content_urls.desktop.page}';
+      let url = data.content_urls.desktop.page;
       
       document.getElementById('title').innerHTML = title;
       document.getElementById('content').innerHTML = content;
