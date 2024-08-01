@@ -4,14 +4,16 @@ function get_fact(){
   fetch("https://en.wikipedia.org/api/rest_v1/page/random/summary")
     .then(response => {
       if (!response.ok) {
+        document.getElementById('title').innerHTML = "something went wrong here :( <br> try again later";
         throw new Error(`HTTP error! status: ${response.status}`);
+        
       }
       return response.json();
     })
     .then(data => {
-      let title = `Title: ${data.title}`;
-      let content = `Summary: ${data.extract}`;
-      let more = `learn more at wikipedia.org`;
+      let title = `${data.title}`;
+      let content = `${data.extract}`;
+      let more = `Learn more about this @wikipedia.org`;
       let url = '${data.content_urls.desktop.page}';
       
       document.getElementById('title').innerHTML = title;
@@ -20,7 +22,6 @@ function get_fact(){
       document.getElementById('more').href = url;
     })
     .catch(error => {
-      // Fehlerbehandlung
       console.error("Fehler beim Abrufen des Artikels:", error);
     });
 }

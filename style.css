@@ -1,8 +1,35 @@
 body{
-    margin: 20%;
-    background-color: antiquewhite;
+    margin: 10vw;
+    font-family: "Roboto", sans-serif;
+}
+.head{
+    display: flex;
+    justify-content: center;
+}
+.button_pos{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 .button{
-    margin-left: auto;
-    margin-right: auto;
+    border-radius: 12px;
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
+.fact{
+    border: 2.5px solid black;
+    padding: 20px;
+    min-height: 100px;
+    max-height: fit-content;
+}
+.footer{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 815px) {
+    .footer{
+        display: block;
+    }
+  }
